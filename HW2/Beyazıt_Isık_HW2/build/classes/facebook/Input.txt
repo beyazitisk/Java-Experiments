@@ -1,0 +1,25 @@
+I Ali
+I Veli
+I Lutfullah
+I Cevziye
+I Ali
+I Cevziye
+O
+D Ali
+I Hulki
+I Hulki
+I Hulki
+O
+F Ali Hulki
+F Cevziye Lutfullah
+F Cevziye Lutfullah
+F Veli Lutfullah
+F Veli Cevziye
+D Cevziye
+D Lutfullah
+F Hulki Cevziye
+W
+P Ali
+P Lutfullah
+P Veli
+X

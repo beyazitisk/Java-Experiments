@@ -1,0 +1,78 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Beyazıt_Isık_HW3;
+import java.io.File;
+import java.util.Scanner;
+import java.io.FileNotFoundException;
+
+/**
+ *
+ * @author Beyazit
+ */
+public class ReadandParse {
+
+    private File myfile;
+    private Scanner reader;
+    private int [][] matrix; // Keeps the elements of matrix in two dimensional array
+
+    public ReadandParse(String path) {
+        this.matrix= new int [11][14];
+        try {
+            this.myfile = new File(path);
+            this.reader = new Scanner(myfile);
+        } catch (FileNotFoundException x) {
+            System.out.println("There is an error in reading file please check if the file path correct ");
+            x.printStackTrace();
+        }
+    }
+    public static void printMatrix(char char_matrix[][]){ // For Debugging Purposes Printing matrix in matrix form
+        for(int j = 0; j < 11;j++)
+        {
+            for(int i = 0; i < 14;i++)
+            {  
+                System.out.print(char_matrix[j][i]+" ");
+            }
+            System.out.println();
+            System.out.println();
+
+        }
+        System.out.println();
+        System.out.println();
+    }
+    public void intprintMatrix(){ // Printing matrix in matrix form
+        for(int j = 0; j < 11;j++)
+        {
+            for(int i = 0; i < 14;i++)
+            {  
+                System.out.print(this.matrix[j][i]);
+            }
+            System.out.println();
+
+        }
+        System.out.println();
+    }
+    private String get_line() {
+        String data = this.reader.nextLine();
+        return data;
+    }
+
+    public int[][] get_matrix() {
+        int col=14;
+        int row =11;
+        int temp_value=0;
+        for(int i =0; i <row; i++)
+        {
+            String data = get_line();
+            String parts[] = data.split(" ");
+            for (int j=0; j<14; j++)
+            {
+                temp_value= Integer.parseInt(parts[j]);
+                this.matrix[i][j]=temp_value;
+            }
+        }
+        return this.matrix;
+    }
+}
